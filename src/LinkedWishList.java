@@ -1,12 +1,13 @@
 
-public class LinkedList {
+public class LinkedWishList {
+
 	private Link first;
 	private Link last;
 	
 	/**
 	 * Default constructor
 	 */
-	public LinkedList() {
+	public LinkedWishList() {
 		first = null;
 		last = null;
 	}
@@ -96,5 +97,4 @@ public class LinkedList {
 		return counter;
 	
 	}
-	
 }

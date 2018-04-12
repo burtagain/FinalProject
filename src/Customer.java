@@ -5,6 +5,8 @@ public class Customer {
 	private String city;
 	private String state;
 	private String favoriteGenre; 
+	private int customerID;
+	private Movie currentMovie;
 	
 	/**
 	 * Default constructor method
@@ -13,12 +15,25 @@ public class Customer {
 		
 	}
 	
-	public Customer(String intName, String intCity, String intState, String intFavGene) {
+	public Customer(String intName, int inCustomerID) {
 		
 		name = intName;
-		city = intCity;
-		state = intState;
-		favoriteGenre = intFavGene;
+		customerID = inCustomerID;
+		
+	}
+	
+	public void Rent(Movie inMovie) {
+		if (inMovie.customerList.inList(this) == false) {
+			
+			inMovie.customerList.insertLast(this);
+			
+			if (inMovie.customerList.getFirst() == this & currentMovie == null) {
+				currentMovie = inMovie;
+				
+			}
+		}
+		
+		
 		
 	}
 
@@ -52,6 +67,10 @@ public class Customer {
 
 	public void setFavoriteGenre(String favoriteGenre) {
 		this.favoriteGenre = favoriteGenre;
+	}
+
+	public int getCustomerID() {
+		return customerID;
 	}
 	
 	

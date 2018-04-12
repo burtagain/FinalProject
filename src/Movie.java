@@ -3,6 +3,8 @@ public class Movie {
 	
 	private String movieTitle;
 	private String director;
+	public LinkedList customerList = new LinkedList();
+	private Customer currentCustomer;
 	
 	public Movie () {
 		
@@ -13,6 +15,8 @@ public Movie (String intTitle, String intDir) {
 		director = intDir;
 		
 	}
+
+
 
 public String getMovieTitle() {
 	return movieTitle;

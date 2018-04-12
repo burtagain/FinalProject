@@ -4,13 +4,15 @@
  */
 public class Link {
 
-	public Movie movie;
+	public Customer Customer;
+	
+	
 
 	public Link next;
 
-	public Link(Movie inMovie) {
+	public Link(Customer inCustomer) {
 
-		movie = inMovie;
+		Customer = inCustomer;
 
 	}
 
@@ -18,6 +20,8 @@ public class Link {
 	 * Displays can object stored in Link
 	 */
 	public void displayLink() {
-		System.out.print("{" + movie + "} ");
+		
+		System.out.print("{" + Customer.getName() + "} ");
+		
 	}
 }
