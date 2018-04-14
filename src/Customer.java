@@ -7,6 +7,7 @@ public class Customer {
 	private String favoriteGenre; 
 	private int customerID;
 	private Movie currentMovie;
+	public CustomerMovieQueue movieQueue = new CustomerMovieQueue();
 	
 	/**
 	 * Default constructor method
