@@ -33,6 +33,14 @@ public String getDirector() {
 public void setDirector(String director) {
 	this.director = director;
 }
+
+public Customer getCurrentCustomer() {
+	return currentCustomer;
+}
+
+public void setCurrentCustomer(Customer currentCustomer) {
+	this.currentCustomer = currentCustomer;
+}
 	
 
 
