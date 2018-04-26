@@ -11,17 +11,31 @@ public class RentalDriver {
 		diehard2.setMovieTitle("Die Hard 2");
 		Steven.Rent(diehard);
 		Steven.Rent(diehard2);
-		System.out.println(Steven.movieQueue.peekFront().getMovieTitle());
-		Steven.Rent(diehard);
-		diehard.customerList.insertLast(John);
-	    John.Rent(diehard2);
-		diehard.customerList.displayList();
+		John.Rent(diehard);
+		John.Rent(diehard2);
+		//System.out.println(Steven.movieQueue.peekFront().getMovieTitle());
+		//diehard.customerList.insertLast(John);
+	    //John.Rent(diehard2);
 		diehard.setMovieTitle("DieHard");
+		John.returnCurrentMovie();
+		Steven.returnCurrentMovie();
+		System.out.println(Steven.getCurrentMovie());
+		
+		diehard.customerList.displayList();
+		//System.out.println(diehard.getCurrentCustomer().getName()); 
+		
+		diehard2.customerList.displayList();
+		//System.out.println(diehard2.getCurrentCustomer().getName()); 
+       // System.out.println(Steven.movieQueue.peekFront().getMovieTitle());
+        
+        
+		
+		
+		
+		
 		
 		// diehard.customerList;
-diehard2.customerList.displayList();
-System.out.println(diehard.getCurrentCustomer().getName()); 
-System.out.println(diehard2.getCurrentCustomer().getName()); 
+//diehard2.customerList.displayList();
 
 
 	}

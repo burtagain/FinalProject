@@ -14,6 +14,7 @@ public Movie (String intTitle, String intDir) {
 		movieTitle = intTitle;
 		director = intDir;
 		
+		
 	}
 
 

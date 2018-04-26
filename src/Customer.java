@@ -1,3 +1,4 @@
+import org.omg.PortableServer.ThreadPolicyOperations;
 
 public class Customer {
 
@@ -20,6 +21,7 @@ public class Customer {
 
 		name = intName;
 		customerID = inCustomerID;
+		
 
 	}
 
@@ -33,7 +35,12 @@ public class Customer {
 			return;
 
 		if (inMovie.getCurrentCustomer() == null & currentMovie == null) {  //if statement that delivers movie to customer if customer has no out standing rental and the Movie is currently being rented
-
+            
+			if (inMovie.customerList.isEmpty() == false) {
+			if (this == inMovie.customerList.getFirst()) {// if statement determines if customer is first on movies customer list, if so it removes the customer before they are placed as the current customer property
+				inMovie.customerList.deleteFirst();
+			}
+			}
 			currentMovie = inMovie;
 			inMovie.setCurrentCustomer(this);
 
@@ -44,6 +51,32 @@ public class Customer {
 			inMovie.customerList.insertLast(this);
 		}
 
+	}
+	
+	public void returnCurrentMovie() {
+		
+		this.currentMovie.setCurrentCustomer(null);
+		this.currentMovie = null;
+		
+		
+		if (this.movieQueue.isEmpty())
+			return;
+		if (this.movieQueue.peekFront().getCurrentCustomer() == null) {
+			
+			if (this.movieQueue.peekFront().customerList.isEmpty() == false) {
+				this.movieQueue.peekFront().customerList.deleteFirst();
+				this.Rent(this.movieQueue.peekFront());
+			}
+			
+			//System.out.println("yes");
+			
+			
+		}
+		
+		
+		
+		
+		
 	}
 
 	public String getName() {
