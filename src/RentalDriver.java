@@ -2,6 +2,9 @@
 public class RentalDriver {
 
 	public static void main(String[] args) {
+		
+		
+		
 		Movie diehard = new Movie();
 		Movie diehard2 = new Movie();
 		Customer Steven = new Customer("Steven", 1);

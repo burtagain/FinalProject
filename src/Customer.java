@@ -63,23 +63,25 @@ public class Customer {
 
 	}
 
-	//simplify method
+	// simplify method
 	public void returnCurrentMovie() {
-      Movie returnMovie =  this.currentMovie ;
-      Customer nextCustomer;
-		
+		Movie returnMovie = this.currentMovie;
+		Customer nextCustomer;
+
 		returnMovie.setCurrentCustomer(null); // clears current customer and movie values
-        
+
 		if (returnMovie.customerList.isEmpty() == false) {
-			
-			if (returnMovie.customerList.getFirst().currentMovie == null) { // check if first person on movie wait list already has a movie checked out
+
+			if (returnMovie.customerList.getFirst().currentMovie == null) { // check if first person on movie wait list
+																			// already has a movie checked out
 				nextCustomer = returnMovie.customerList.getFirst();
-				returnMovie.customerList.deleteFirst(); //removes customer from movie wait list as they are now actively renting movie
-				nextCustomer.Rent(this.currentMovie); //rents movie
+				returnMovie.customerList.deleteFirst(); // removes customer from movie wait list as they are now
+														// actively renting movie
+				nextCustomer.Rent(this.currentMovie); // rents movie
 			}
 		}
-		
-		this.currentMovie = null; //clears current movie value for user
+
+		this.currentMovie = null; // clears current movie value for user
 
 		if (this.movieQueue.isEmpty()) // checks customers movie queue, takes no action if it is empty
 			return;
