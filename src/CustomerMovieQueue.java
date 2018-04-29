@@ -54,6 +54,19 @@ public class CustomerMovieQueue {
 	      return nItems;
 	      }
 	//--------------------------------------------------------------
+	   
+	   public void displayMovieList() {
+		  int i = 0;
+		  if (queArray[i] == null) {
+			  return;
+		  }
+		  
+		   while (queArray[i] != null) {
+			   
+			   System.out.println(queArray[i].getMovieTitle());
+			   i++;
+		   }
+	   }
 	   }  // end class Queue
 	
 	

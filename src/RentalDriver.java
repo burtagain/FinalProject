@@ -17,9 +17,13 @@ public class RentalDriver {
 		//diehard.customerList.insertLast(John);
 	    //John.Rent(diehard2);
 		diehard.setMovieTitle("DieHard");
+		diehard.customerList.displayList();
+		diehard2.customerList.displayList();
+		
 		John.returnCurrentMovie();
 		Steven.returnCurrentMovie();
-		System.out.println(Steven.getCurrentMovie());
+		System.out.println(Steven.getCurrentMovie().getMovieTitle());
+		John.movieQueue.displayMovieList();
 		
 		diehard.customerList.displayList();
 		//System.out.println(diehard.getCurrentCustomer().getName()); 
