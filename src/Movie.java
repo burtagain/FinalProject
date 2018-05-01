@@ -1,47 +1,76 @@
 
+/**
+ * @author Burt Movie Class that defines properties and methods for Movie
+ *         Objects
+ */
 public class Movie {
-	
-	private String movieTitle;
-	private String director;
-	public LinkedList customerList = new LinkedList();
-	private Customer currentCustomer;
-	
-	public Movie () {
-		
+
+	private String movieTitle; // title of Movie
+	private String director; // director of movie
+	public LinkedList customerList = new LinkedList(); // new linked list to be used to store customers
+	private Customer currentCustomer; // stores current customer value
+
+	/**
+	 * Default movie constructor
+	 */
+	public Movie() {
+
 	}
 
-public Movie (String intTitle, String intDir) {
+	/**
+	 * @param intTitle
+	 * @param intDir
+	 *            Constructor that populates movie title and movie director
+	 */
+	public Movie(String intTitle, String intDir) {
 		movieTitle = intTitle;
 		director = intDir;
-		
+
 	}
 
+	/**
+	 * @return returns Movie Title
+	 */
+	public String getMovieTitle() {
+		return movieTitle;
+	}
 
+	/**
+	 * @param movieTitle
+	 *            Sets Movie title
+	 */
+	public void setMovieTitle(String movieTitle) {
+		this.movieTitle = movieTitle;
+	}
 
-public String getMovieTitle() {
-	return movieTitle;
-}
+	/**
+	 * @return returns Director
+	 */
+	public String getDirector() {
+		return director;
+	}
 
-public void setMovieTitle(String movieTitle) {
-	this.movieTitle = movieTitle;
-}
+	/**
+	 * @param director
+	 *            Sets Director
+	 */
+	public void setDirector(String director) {
+		this.director = director;
+	}
 
-public String getDirector() {
-	return director;
-}
+	/**
+	 * @return returns Current Customer
+	 */
+	public Customer getCurrentCustomer() {
+		return currentCustomer;
+	}
 
-public void setDirector(String director) {
-	this.director = director;
-}
-
-public Customer getCurrentCustomer() {
-	return currentCustomer;
-}
-
-public void setCurrentCustomer(Customer currentCustomer) {
-	this.currentCustomer = currentCustomer;
-}
-	
-
+	/**
+	 * @param currentCustomer
+	 *            Sets Current Customer
+	 */
+	public void setCurrentCustomer(Customer currentCustomer) {
+		this.currentCustomer = currentCustomer;
+	}
 
 }
