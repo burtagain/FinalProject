@@ -8,8 +8,8 @@ public class Customer {
 	private Movie currentMovie;
 	// public CustomerMovieQueue movieQueue = new CustomerMovieQueue();
 	public LinkedList movieQueue = new LinkedList();
-	private String addMessage;
-	private String returnMessage;
+	private String addMessage; //this is a string that is passed to the UI to show status events during rent method
+	private String returnMessage; //this is a string that is passed to the UI to show status events during return method
 
 	/**
 	 * Default constructor method
@@ -36,13 +36,13 @@ public class Customer {
 	 *            movie should be delivered or added to the users movie queue
 	 */
 	public void Rent(Movie inMovie) {
-
+		// due to the complexity of this method I have visually divided it up to make it
+		// easier to follow its logic
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// test if user already has movie rented
-		if (inMovie.customerList.inList(this) == true || inMovie.getCurrentCustomer() == this) { // guard rail statement
-			addMessage = this.name + "already has " + inMovie.getMovieTitle() + " Checked out or in their queue"; // that
-																													// prevents
-																													// the
+		if (inMovie.customerList.inList(this) == true || inMovie.getCurrentCustomer() == this) { 
+			addMessage = this.name + "already has " + inMovie.getMovieTitle() + " Checked out or in their queue"; 
+			// guard rail statement																																																						// the
 			// prevents same user from being
 			// in the customer queue
 			// for a movie multiple
@@ -59,10 +59,10 @@ public class Customer {
 
 			if (inMovie.customerList.isEmpty() == false) {
 				if (this == inMovie.customerList.getFirstCust()) {// if statement determines if customer is first on
-																	// movies
-																	// customer list, if so it removes the customer
-																	// before
-																	// they are placed as the current customer property
+																	// movies customer list,
+																	//  if so it removes the customer
+																	// before they are placed
+																	//  as the current customer property
 					inMovie.customerList.deleteFirst();
 
 				}
