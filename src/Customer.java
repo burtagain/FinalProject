@@ -52,19 +52,20 @@ public class Customer {
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		// Checks out current movie if customer and movie are both free
-		if (inMovie.getCurrentCustomer() == null & currentMovie == null) { // if statement that delivers movie to
-																			// customer if customer has no out standing
-																			// rental and the Movie is currently being
-																			// rented
+		if (inMovie.getCurrentCustomer() == null & currentMovie == null) { 
+			// if statement that delivers movie to
+			// customer if customer has no out standing
+			// rental and the Movie is currently being
+			// rented
 
 			if (inMovie.customerList.isEmpty() == false) {
-				if (this == inMovie.customerList.getFirstCust()) {// if statement determines if customer is first on
-																	// movies customer list,
-																	//  if so it removes the customer
-																	// before they are placed
-																	//  as the current customer property
+				if (this == inMovie.customerList.getFirstCust()) {
 					inMovie.customerList.deleteFirst();
-
+					// if statement determines if customer is first on
+					// movies customer list,
+					//  if so it removes the customer
+					// before they are placed
+					//  as the current customer property
 				}
 			}
 			currentMovie = inMovie; // sets movie as current movie user is renting
